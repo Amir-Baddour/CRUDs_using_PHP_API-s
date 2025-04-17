@@ -14,7 +14,7 @@ export default function EditUser() {
       console.log(response.data);
       setInputs(response.data);
     });
-  }
+  }, [id]); // Add `id` as a dependency in case it changes
   //handleChange
   const handleChange = (event) => {
     const name = event.target.name;
