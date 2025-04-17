@@ -14,23 +14,7 @@ export default function EditUser() {
       console.log(response.data);
       setInputs(response.data);
     });
-  }, [id]); // Add `id` as a dependency in case it changes
-
-  const handleChange = (event) => {
-    const name = event.target.name;
-    const value = event.target.value;
-    setInputs((values) => ({ ...values, [name]: value }));
-  };
-  const handleSubmit = (event) => {
-    event.preventDefault();
-
-    axios
-      .put(`http://localhost:8888/api/user/${id}/edit`, inputs)
-      .then(function (response) {
-        console.log(response.data);
-        navigate("/");
-      });
-  };
+  }
   return (
     <div>
       <h1>Edit user</h1>
