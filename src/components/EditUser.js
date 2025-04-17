@@ -21,6 +21,12 @@ export default function EditUser() {
       setInputs(response.data);
     });
   }
+  //handleChange
+  const handleChange = (event) => {
+    const name = event.target.name;
+    const value = event.target.value;
+    setInputs(values => ({...values, [name]: value}));
+}
   return (
     <div>
       <h1>Edit User</h1>
