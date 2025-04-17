@@ -10,18 +10,11 @@ export default function EditUser() {
   const { id } = useParams();
 
   useEffect(() => {
-    getUser();
-  }, []);
-  useEffect(() => {
-    getUser();
-  }, []);
-  //getUser
-  function getUser() {
-    axios.get(`http://localhost:8888/api/user/${id}`).then(function (response) {
+    axios.get(`http://localhost:8888/api/user/${id}`).then((response) => {
       console.log(response.data);
       setInputs(response.data);
     });
-  }
+  }, [id]); // Add `id` as a dependency in case it changes
   //handleChange
   const handleChange = (event) => {
     const name = event.target.name;
