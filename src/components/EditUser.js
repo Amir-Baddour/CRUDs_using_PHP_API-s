@@ -15,59 +15,15 @@ export default function EditUser() {
       setInputs(response.data);
     });
   }
+  //handleChange
+  const handleChange = (event) => {
+    const name = event.target.name;
+    const value = event.target.value;
+    setInputs(values => ({...values, [name]: value}));
+}
   return (
     <div>
-      <h1>Edit user</h1>
-      <form onSubmit={handleSubmit}>
-        <table cellSpacing="10">
-          <tbody>
-            <tr>
-              <th>
-                <label>Name: </label>
-              </th>
-              <td>
-                <input
-                  value={inputs.name}
-                  type="text"
-                  name="name"
-                  onChange={handleChange}
-                />
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <label>Email: </label>
-              </th>
-              <td>
-                <input
-                  value={inputs.email}
-                  type="text"
-                  name="email"
-                  onChange={handleChange}
-                />
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <label>Mobile: </label>
-              </th>
-              <td>
-                <input
-                  value={inputs.mobile}
-                  type="text"
-                  name="mobile"
-                  onChange={handleChange}
-                />
-              </td>
-            </tr>
-            <tr>
-              <td colSpan="2" align="right">
-                <button>Save</button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </form>
+      <h1>Edit User</h1>
     </div>
   );
 }
